@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CryptoList</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_empty_body">Сервер возвращает пустой ответ, сообщите эту ошибку!</string>
+    <string name="error_no_internet">Нет подключения к Интернету</string>
+    <string name="msg_connect_to_internet">Подключитесь к сети!</string>
+    <string name="error_network_timeout">Похоже, сервер слишком долго реагирует, это может быть вызвано либо плохой связностью, либо ошибкой с нашими серверами. Повторите попытку через некоторое время</string>
+    <string name="error_data_parse">Сервер отвечает в другом формате, сообщите эту ошибку!</string>
+    <string name="search">Поиск</string>
+    <string name="et_hint">e.g bitcoin</string>
+</resources>
