@@ -3,13 +3,13 @@ package kg.bakai.cryptolist.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kg.bakai.cryptolist.data.repository.MainRepository
+import kg.bakai.cryptolist.data.repository.Repository
 import kg.bakai.cryptolist.domain.models.Crypto
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SearchViewModel(private val repository: MainRepository): ViewModel() {
+class SearchViewModel(private val repository: Repository): ViewModel() {
 
     private val scope = CoroutineScope(Dispatchers.IO)
 

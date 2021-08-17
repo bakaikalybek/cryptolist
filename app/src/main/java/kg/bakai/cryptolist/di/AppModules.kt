@@ -6,6 +6,7 @@ import kg.bakai.cryptolist.data.database.CryptoDao
 import kg.bakai.cryptolist.data.database.CryptoDatabase
 import kg.bakai.cryptolist.data.network.ApiService
 import kg.bakai.cryptolist.data.repository.MainRepository
+import kg.bakai.cryptolist.data.repository.Repository
 import kg.bakai.cryptolist.ui.viewmodels.MainViewModel
 import kg.bakai.cryptolist.ui.viewmodels.SearchViewModel
 import kg.bakai.cryptolist.utils.UrlProvider
@@ -23,7 +24,7 @@ val viewModelModule = module {
 }
 
 val repoModule = module {
-    single { MainRepository(get(), get(), get()) }
+    single<Repository> { MainRepository(get(), get(), get()) }
 }
 
 val networkModule = module {

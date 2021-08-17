@@ -12,9 +12,9 @@ import kg.bakai.cryptolist.utils.awaitResult
 class MainRepository(
     private val apiService: ApiService,
     private val dao: CryptoDao,
-    private val context: Context) {
+    private val context: Context): Repository {
 
-    suspend fun fetchList(currency: String, amount: Int): Resource<List<Crypto>> {
+    override suspend fun fetchList(currency: String, amount: Int): Resource<List<Crypto>> {
         return when(val response = apiService.fetchList(currency, amount).awaitResult()) {
             is Result.Ok -> {
                 val data = response.value
@@ -32,10 +32,15 @@ class MainRepository(
         }
     }
 
-    val listInDatabase: Flow<List<Crypto>> = dao.getCryptoList()
+    override fun getListFromDatabase(): Flow<List<Crypto>> {
+        return dao.getCryptoList()
+    }
 
-    fun searchCrypto(search: String): List<Crypto> {
+    override fun searchCrypto(search: String): List<Crypto> {
         return dao.getSearchResult(search)
     }
 
+    override suspend fun clearDb() {
+        dao.deleteAll()
+    }
 }

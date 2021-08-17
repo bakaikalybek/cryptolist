@@ -9,4 +9,5 @@
     <string name="error_data_parse">Сервер отвечает в другом формате, сообщите эту ошибку!</string>
     <string name="search">Поиск</string>
     <string name="et_hint">e.g bitcoin</string>
+    <string name="clear">Очистить</string>
 </resources>

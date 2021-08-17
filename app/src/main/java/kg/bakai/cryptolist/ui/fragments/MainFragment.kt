@@ -66,6 +66,9 @@ class MainFragment : Fragment() {
             R.id.menu_search_item -> {
                 findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
             }
+            R.id.menu_delete_item -> {
+                mainViewModel.clearDb()
+            }
         }
         return true
     }
